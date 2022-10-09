@@ -1,38 +1,172 @@
+/* Remove browser defaults */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+}
+
+/* Style App.js wrapper */
 .App {
-  text-align: center;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Tab Container */
+.Tabs {
+	width: 80%;
+	height: auto;
+	min-height: 400px;
+	background: #eeeeee;
+	margin: 3.5rem auto 1.5rem;
+	color: #e8f0f2;
+	@media (max-width: 769px) {
+		padding: 2rem 0;
+	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Tab Navigation */
+ul.nav {
+	width: 100%;
+	margin: 0 auto 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	border-bottom: 1px solid grey;
+	padding: 0 2.5rem;
+	flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul.nav li {
+	width: auto;
+	padding: 1rem;
+	list-style: none;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.7s;
+	color: black;
+	font-weight: bold;
+	margin: 0px 0 -2.5px 0;
 }
 
-.App-link {
-  color: #61dafb;
+ul.nav li:hover {
+	background: rgba(50, 224, 196, 0.15);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul.nav li.active {
+	border-bottom: 4px solid #0dc188;
+}
+
+@media (max-width: 768px) {
+	.outlet {
+		flex-wrap: wrap;
+	}
+	ul.nav li {
+		width: 100%;
+	}
+}
+
+/* Tab Content Styles */
+.outlet {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	padding: 0 2rem;
+}
+
+.TabContent {
+	font-size: 2rem;
+	text-align: center;
+	color: black;
+	width: 100%;
+}
+
+.TabContentCard {
+	display: flex;
+	justify-content: flex-start;
+	padding: 0.5rem;
+	background: white;
+	margin: 0.5rem;
+	border: 1px solid lightgray;
+	border-radius: 7px;
+}
+
+.cardThumbnail {
+	display: flex;
+	/* background: red; */
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 8px 0px 0 10px;
+}
+.cardThumbnail a {
+	color: grey;
+	align-self: center;
+}
+
+.dummyImg {
+	height: 50px;
+	width: 50px;
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 25px;
+}
+.dummyImg1 {
+	height: 50px;
+	width: 50px;
+	background-color: maroon;
+	border: 1px solid grey;
+	border-radius: 25px;
+}
+.cardContent {
+	/* background: green; */
+	width: 70%;
+	text-align: left;
+	padding: 0 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.cardContent .name {
+	font-size: 20px;
+	font-weight: 500;
+	white-space: nowrap;
+	width: 75%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.title {
+	padding-top: 7px;
+	font-size: 14px;
+	font-weight: 400;
+	white-space: nowrap;
+	width: 75%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: black;
+}
+
+.location {
+	font-size: 12px;
+	white-space: nowrap;
+	width: 75%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: gray;
+}
+/*ToolTip*/
+
+.tooltip {
+	background-color: #0dc188;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 6px 10px;
+	position: relative;
+	bottom: 0%;
+	left: 10%;
 }
